@@ -54,6 +54,8 @@ import {
   type SearchResult,
   type RankedResult,
 } from "../src/store.js";
+
+const llmIntegrationTimeoutMs = process.platform === "win32" ? 60000 : 30000;
 import type { CollectionConfig } from "../src/collections.js";
 
 // =============================================================================
@@ -2494,7 +2496,7 @@ describe.skipIf(!!process.env.CI)("LlamaCpp Integration", () => {
     }
 
     await cleanupTestDb(store);
-  }, 90000);
+  }, llmIntegrationTimeoutMs);
 
   test("expandQuery caches results as JSON with types", async () => {
     const store = await createTestStore();
@@ -2509,7 +2511,7 @@ describe.skipIf(!!process.env.CI)("LlamaCpp Integration", () => {
     expect(queries2[0]?.type).toBeDefined();
 
     await cleanupTestDb(store);
-  }, 60000);
+  }, llmIntegrationTimeoutMs);
 
   test("rerank scores documents", async () => {
     const store = await createTestStore();
