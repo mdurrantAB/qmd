@@ -1490,7 +1490,7 @@ class LLMSession implements ILLMSession {
     }
 
     // Set up max duration timer
-    const maxDuration = options.maxDuration ?? 10 * 60 * 1000; // Default 10 minutes
+    const maxDuration = options.maxDuration ?? 30 * 60 * 1000; // Default 10 minutes
     if (maxDuration > 0) {
       this.maxDurationTimer = setTimeout(() => {
         this.abortController.abort(new Error(`Session "${this.name}" exceeded max duration of ${maxDuration}ms`));

@@ -61,8 +61,8 @@
     "sqlite-vec-linux-arm64": "0.1.9",
     "sqlite-vec-linux-x64": "0.1.9",
     "sqlite-vec-windows-x64": "0.1.9",
-    "tree-sitter-go": "0.23.4",
     "tree-sitter-c-sharp": "0.23.1",
+    "tree-sitter-go": "0.23.4",
     "tree-sitter-python": "0.23.4",
     "tree-sitter-rust": "0.24.0",
     "tree-sitter-typescript": "0.23.2"
